@@ -21,8 +21,10 @@ public class MainCharacterLocomotion : MonoBehaviour
     void Update()
     {
         Move();
-        Running();
+        RunningBoolTrigger();
         Jumping();
+        CrouchingBoolTrigger();
+        Crouching();
     }
 
     void Move()
@@ -42,7 +44,7 @@ public class MainCharacterLocomotion : MonoBehaviour
         }
     }
 
-    void Running()
+    void RunningBoolTrigger()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && animator.GetFloat("Vertical") >= .3f) 
         {
@@ -64,6 +66,28 @@ public class MainCharacterLocomotion : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && animator.GetFloat("Vertical") > .5f)
         {
             animator.SetTrigger("isJumping");
+        }
+    }
+
+    void CrouchingBoolTrigger()
+    {
+        if (Input.GetKeyDown("c") && !animator.GetBool("isCrouching"))
+        {
+            animator.SetBool("isCrouching", true);
+        }
+        else
+            if (Input.GetKeyDown("c") && animator.GetBool("isCrouching"))
+            {
+                animator.SetBool("isCrouching", false);
+            }
+    }
+
+    void Crouching()
+    {
+        if (animator.GetBool("isCrouching"))
+        {
+            animator.SetFloat("VerticalCrouching", Mathf.Clamp(Input.GetAxis("Vertical"), clampMin, clampMax));
+            animator.SetFloat("HorizontalCrouching", Mathf.Clamp(Input.GetAxis("Horizontal"), clampMin, clampMax));
         }
     }
 }
