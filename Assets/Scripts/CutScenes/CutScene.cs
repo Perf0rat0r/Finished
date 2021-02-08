@@ -6,7 +6,6 @@ using TMPro;
 public class CutScene : MonoBehaviour
 { 
     public GameObject mainCharacter;
-    private MainCharacterLocomotion mainChrLoc;
 
     public int textAreas;
     public TextMeshProUGUI[] text = new TextMeshProUGUI[1];
@@ -20,16 +19,16 @@ public class CutScene : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        mainChrLoc = mainCharacter.GetComponent<MainCharacterLocomotion>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetTrigger("EndCutScene");
             animator.SetBool("SkipHint", false);
-            Destroy(gameObject, 2);
+            animator.SetTrigger("EndCutScene");
+            mainCharacter.SetActive(true);
+            Destroy(gameObject, 3);
         }
     }
 
@@ -57,5 +56,10 @@ public class CutScene : MonoBehaviour
     void StopTime()
     {
         Time.timeScale = 0;
+    }
+
+    void DeactivatePlayer()
+    {
+        mainCharacter.SetActive(false);
     }
 }
