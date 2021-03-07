@@ -3,7 +3,12 @@ guid: d3aca549aa26c074f85333fdfc72a463
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightPillar Material
+    second: {fileID: 2100000, guid: 6c956162eb51fbb4b901b67bd081c5e5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
