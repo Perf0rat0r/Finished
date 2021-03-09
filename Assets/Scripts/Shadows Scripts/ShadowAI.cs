@@ -7,9 +7,6 @@ using UnityEngine.Rendering.Universal;
 
 public class ShadowAI : MonoBehaviour
 {
-    NavMeshAgent navMeshAgent;
-    Transform target;
-    PlayerHealth playerHealthScript;
 
     private Volume volume;
     private Vignette vignette;
@@ -21,6 +18,12 @@ public class ShadowAI : MonoBehaviour
    
     public AIState aiState = AIState.idle;
 
+    NavMeshAgent navMeshAgent;
+    Transform target;
+    PlayerHealth playerHealthScript;
+    Animator shadowAnimator;
+    Animator playerAnimator;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -28,7 +31,10 @@ public class ShadowAI : MonoBehaviour
         volume.profile.TryGet(out vignette);
         target = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealthScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        StartCoroutine("Think");
+        playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        shadowAnimator = GetComponent<Animator>();
+        StartCoroutine(Think());
+        
     }
 
 
@@ -40,10 +46,13 @@ public class ShadowAI : MonoBehaviour
             {
                 case AIState.idle:
                 float distance = Vector3.Distance(target.position, transform.position);
-                if (distance < distanceTreshold)
+                if (distance < distanceTreshold && !playerAnimator.GetBool("isCrouching"))
                 {
                     aiState = AIState.chasing;
                 }
+                //Idle code
+                    shadowAnimator.SetBool("isChasing", false);
+                    shadowAnimator.SetBool("isAttacking", false);
                     navMeshAgent.SetDestination(transform.position);
                 break;
 
@@ -57,7 +66,10 @@ public class ShadowAI : MonoBehaviour
                 {
                     aiState = AIState.attack;
                 }
+                //Chasing code
                     navMeshAgent.SetDestination(target.position);
+                    shadowAnimator.SetBool("isChasing", true);
+                    shadowAnimator.SetBool("isAttacking", false);
                 break;
 
                 case AIState.attack:
@@ -66,12 +78,20 @@ public class ShadowAI : MonoBehaviour
                 {
                     aiState = AIState.chasing;
                 }
-                vignette.intensity.value += attackPower; // Damaging player
-                playerHealthScript.basicRegenTrigger = false; // Deactivating regen option for player
-                playerHealthScript.basicHealthRegenCoroutineFlag = true; // Triggering Regen Courutione RE-execution
+                //Atacking code
+                shadowAnimator.SetBool("isAttacking", true);
+                shadowAnimator.SetBool("isChasing", false);
+                
                 break;
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.5f);
         }
+    }
+
+    void Attack()
+    {
+        vignette.intensity.value += attackPower/10; // Damaging player
+        playerHealthScript.basicRegenTrigger = false; // Deactivating regen option for player
+        playerHealthScript.basicHealthRegenCoroutineFlag = true; // Triggering Regen Courutione RE-execution
     }
 }
