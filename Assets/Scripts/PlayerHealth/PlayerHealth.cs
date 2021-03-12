@@ -49,10 +49,10 @@ public class PlayerHealth : MonoBehaviour
         {
             basicHealthRegenCoroutineFlag = false;  // Reset RE-execution bool
             basicHealthRegenFlag = false;   // Reset coroutine-execution permission
-            Debug.Log("Coroutine Breaked");
+            //Debug.Log("Coroutine Breaked");
             yield break;
         }
-        Debug.Log("Coroutine Executed");
+        //Debug.Log("Coroutine Executed");
         basicRegenTrigger = true;
         basicHealthRegenFlag = false;
     }
