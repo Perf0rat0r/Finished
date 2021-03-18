@@ -1147,7 +1147,6 @@ GameObject:
   - component: {fileID: 7746148672319948416}
   - component: {fileID: 7746148672319948430}
   - component: {fileID: 503518560}
-  - component: {fileID: 503518559}
   - component: {fileID: 503518561}
   m_Layer: 0
   m_Name: MainCharacter
@@ -1321,22 +1320,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &503518559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7475607031399037910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2db3b4e9ed9d57945937179a7b8346ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
-  basicRegenTrigger: 1
-  healthPower: 2
-  basicHealthRegenCoroutineFlag: 0
 --- !u!136 &503518561
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1347,7 +1330,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4
+  m_Radius: 0.1
   m_Height: 1.85
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}

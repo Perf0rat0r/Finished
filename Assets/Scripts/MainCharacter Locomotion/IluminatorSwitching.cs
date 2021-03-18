@@ -8,6 +8,7 @@ public class IluminatorSwitching : MonoBehaviour
     
     public GameObject iluminator;
     public Rig rightHandRigLayer;
+    public IluminatorUI iluminatorUIScript;
 
     private bool iluminatorEquiped = false;
 
@@ -18,6 +19,7 @@ public class IluminatorSwitching : MonoBehaviour
             iluminatorEquiped = true;
             iluminator.SetActive(true);
             rightHandRigLayer.weight = 1;
+            iluminatorUIScript.DisableUIObject();
         }
         else
         if ( Input.GetKeyDown("e") && iluminatorEquiped )
@@ -25,6 +27,7 @@ public class IluminatorSwitching : MonoBehaviour
             iluminatorEquiped = false;
             iluminator.SetActive(false);
             rightHandRigLayer.weight = 0;
+            iluminatorUIScript.EnableUIObject();
         }
         
 

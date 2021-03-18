@@ -12,9 +12,11 @@ public class CharacterAiming : MonoBehaviour
     bool AltPressed;
 
     Camera mainCamera;
+    Animator playerAnimator;
     // Start is called before the first frame update
     void Start()
     {
+        playerAnimator = GetComponent<Animator>();
         mainCamera = Camera.main;
         Cursor.visible = false;
     }
@@ -27,7 +29,7 @@ public class CharacterAiming : MonoBehaviour
 
         cameraLookAt.eulerAngles = new Vector3(yAxis.Value, xAxis.Value, 0);
 
-        if (!Input.GetKey(KeyCode.LeftAlt))
+        if (!Input.GetKey(KeyCode.LeftAlt) && !playerAnimator.GetBool("isDead"))
         {
             RotatingPlayerToCameraView();
         }

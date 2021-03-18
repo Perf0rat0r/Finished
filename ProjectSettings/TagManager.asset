@@ -8,6 +8,7 @@ TagManager:
   - Shadow
   - RaycastPlayerDetector
   - Obstacle
+  - Hands
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - UI 3D Objects
   - 
   - 
   - 
