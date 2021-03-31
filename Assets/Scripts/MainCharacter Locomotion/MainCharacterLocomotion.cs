@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,6 +41,7 @@ public class MainCharacterLocomotion : MonoBehaviour
         {
             animator.SetFloat("Vertical", Mathf.Clamp(Input.GetAxis("Vertical"), clampMin, clampMax));
             animator.SetFloat("Horizontal", Mathf.Clamp(Input.GetAxis("Horizontal"), clampMin, clampMax));
+            
         }
     }
 
