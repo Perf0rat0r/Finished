@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>D:\GitHubFinished\Finished\Finished_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\GitHubFinished\Finished\Finished_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\GitHubFinished\Finished\Finished_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\GitHubFinished\Finished\Finished_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1069431850" Language="SFX" Hash="1372076072">
+			<ObjectPath>\SoundBanks\Default Work Unit\Player</ObjectPath>
+			<ShortName>Player</ShortName>
+			<Path>Player.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3908002903" Name="Footsteps_Event" ObjectPath="\Events\Default Work Unit\Footsteps_Event" DurationType="OneShot" DurationMin="0.217000" DurationMax="0.480000">
+					<IncludedMemoryFiles>
+						<File Id="197833895" Language="SFX">
+							<ShortName>Grass_Footstep.wav</ShortName>
+							<Path>SFX\Grass_Footstep_05BA0D9F.wem</Path>
+						</File>
+						<File Id="210354569" Language="SFX">
+							<ShortName>Grass_Footstep.wav</ShortName>
+							<Path>SFX\Grass_Footstep_85B5A7A7.wem</Path>
+						</File>
+						<File Id="293297903" Language="SFX">
+							<ShortName>Water_Footstep3.wav</ShortName>
+							<Path>SFX\Water_Footstep3_0ABFF856.wem</Path>
+						</File>
+						<File Id="720269928" Language="SFX">
+							<ShortName>Water_Footstep1.wav</ShortName>
+							<Path>SFX\Water_Footstep1_2588F7B4.wem</Path>
+						</File>
+						<File Id="835369620" Language="SFX">
+							<ShortName>Grass_Footstep.wav</ShortName>
+							<Path>SFX\Grass_Footstep_B04FBB1F.wem</Path>
+						</File>
+						<File Id="1012739278" Language="SFX">
+							<ShortName>Water_Footstep2.wav</ShortName>
+							<Path>SFX\Water_Footstep2_975831DB.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{04C9CD74-9086-4268-ABF6-7BAE3BF5C4B2}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{A98C156E-C81A-4F45-AB5A-AA930182803E}">
+							<Media>
+								<File Id="293297903"/>
+								<File Id="720269928"/>
+								<File Id="1012739278"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{04C9CD74-9086-4268-ABF6-7BAE3BF5C4B2}">
+							<Media>
+								<File Id="197833895"/>
+								<File Id="210354569"/>
+								<File Id="835369620"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="2835351336" Name="GroundType" ObjectPath="\Switches\Default Work Unit\GroundType">
+					<Switches>
+						<Switch Id="4248645337" Name="Grass" ObjectPath="\Switches\Default Work Unit\GroundType\Grass"/>
+						<Switch Id="2654748154" Name="Water" ObjectPath="\Switches\Default Work Unit\GroundType\Water"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX" Hash="2754342975">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

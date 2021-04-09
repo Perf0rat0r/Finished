@@ -1,0 +1,18 @@
+Event	ID	Name			Wwise Object Path	Notes
+	3908002903	Footsteps_Event			\Default Work Unit\Footsteps_Event	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	2835351336	GroundType			\Default Work Unit\GroundType	
+
+Switch	ID	Name	Switch Group			Notes
+	2654748154	Water	GroundType			
+	4248645337	Grass	GroundType			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	197833895	Grass_Footstep	D:\GitHubFinished\Finished\Finished_WwiseProject\.cache\Mac\SFX\Grass_Footstep_05BA0D9F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps Switch Container\Grass Random Container\Grass_Footstep		46144
+	210354569	Grass_Footstep_01	D:\GitHubFinished\Finished\Finished_WwiseProject\.cache\Mac\SFX\Grass_Footstep_85B5A7A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps Switch Container\Grass Random Container\Grass_Footstep_01		26464
+	293297903	Water_Footstep3	D:\GitHubFinished\Finished\Finished_WwiseProject\.cache\Mac\SFX\Water_Footstep3_0ABFF856.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps Switch Container\Water Random Container\Water_Footstep3		53440
+	720269928	Water_Footstep1	D:\GitHubFinished\Finished\Finished_WwiseProject\.cache\Mac\SFX\Water_Footstep1_2588F7B4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps Switch Container\Water Random Container\Water_Footstep1		62656
+	835369620	Grass_Footstep_02	D:\GitHubFinished\Finished\Finished_WwiseProject\.cache\Mac\SFX\Grass_Footstep_B04FBB1F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps Switch Container\Grass Random Container\Grass_Footstep_02		44128
+	1012739278	Water_Footstep2	D:\GitHubFinished\Finished\Finished_WwiseProject\.cache\Mac\SFX\Water_Footstep2_975831DB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps Switch Container\Water Random Container\Water_Footstep2		41728
+
